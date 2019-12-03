@@ -23,7 +23,7 @@ public class HdfsFileTest {
         Configuration configuration = new Configuration();
         configuration.set("fs.defaultFS","hdfs://node01:8020");
         FileSystem fileSystem = FileSystem.get(configuration);
-        boolean mk = fileSystem.mkdirs(new Path("/doudou/dir1"));
+        boolean mk = fileSystem.mkdirs(new Path("/doudou/dir1/input"));
         System.out.println("mk : " + mk);
         fileSystem.close();
     }
@@ -33,7 +33,7 @@ public class HdfsFileTest {
         Configuration configuration = new Configuration();
         configuration.set("fs.defaultFS","hdfs://node01:8020");
         FileSystem fileSystem = FileSystem.get(configuration);
-        fileSystem.copyFromLocalFile(new Path("file:///E:\\大数据\\hdfs第一次课后资料\\settings-user.xml"),new Path("hdfs://node01:8020/doudou/dir1"));
+        fileSystem.copyFromLocalFile(new Path("file:///E:\\大数据\\第三次课1202\\1202_课前资料_mr与yarn\\3、第三天\\1、wordCount_input\\数据\\2.txt"),new Path("hdfs://node01:8020/doudou/dir1/input"));
         fileSystem.close();
     }
 //3、文件下载
@@ -52,7 +52,7 @@ public class HdfsFileTest {
         Configuration configuration = new Configuration();
         configuration.set("fs.defaultFS", "hdfs://node01:8020");
         FileSystem fileSystem = FileSystem.get(configuration);
-        fileSystem.delete(new Path("hdfs://node01:8020/doudou/dir1/settings-user.xml"), false);
+        fileSystem.delete(new Path("hdfs://node01:8020/doudou/dir1/input"), false);
         fileSystem.close();
     }
 

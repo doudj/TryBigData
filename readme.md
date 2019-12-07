@@ -8,4 +8,8 @@
 #### mapreduce 文件处理
     partition分区、排序、combiner规约、groupingComparator分组
     查询topN的订单数据                           
-                            
+                  
+#### mapreduce 分类、关联、自定义outputformat
+    一个文件，将某一列不同的数据进行分类，并写到不同的文件中
+    两个文件某个字段是由关联的，将两个文件合并成一个，并且关联的数据放到一起
+    自定义outputformat，和自定义inputformat类似      

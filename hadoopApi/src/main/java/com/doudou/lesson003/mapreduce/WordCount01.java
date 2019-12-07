@@ -70,6 +70,16 @@ public class WordCount01 extends Configured implements Tool {
     public static void main(String[] args) throws Exception {
         Configuration configuration = new Configuration();
         configuration.set("hello", "world");
+
+        //设置map阶段的压缩
+//        configuration.set("mapreduce.map.output.compress", "true");
+//        configuration.set("mapreduce.map.output.compress.codec", "org.apache.hadoop.io.compress.SnappyCodec");
+
+        // 设置reduce阶段的压缩
+//        configuration.set("mapreduce.output.fileoutputformat.compress", "true");
+//        configuration.set("mapreduce.output.fileoutputformat.compress.type", "RECORD");
+//        configuration.set("mapreduce.output.fileoutputformat.compress.codec", "org.apache.hadoop.io.compress.SnappyCodec");
+
         //提交run方法后，得到一个程序的退出状态码
         int run = ToolRunner.run(configuration, new WordCount01(), args);
         // 根据退出状态码，退出整个进程
